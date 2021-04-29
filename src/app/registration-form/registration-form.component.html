@@ -1,0 +1,79 @@
+<h1>Registration Form</h1>
+<form  action="#" (submit)="handleSubmit($event)">
+
+<dx-form
+    [(formData)]="employee" id="myform">
+
+    <dxi-item dataField="firstName" [isRequired]="true" id="firstName">
+    </dxi-item>
+        <dxi-validation-rule type="required" message="firstName is required"></dxi-validation-rule>
+    <dxi-item dataField="lastName" [isRequired]="true">
+        </dxi-item>
+        <dxi-validation-rule type="required" message="lastName is required"></dxi-validation-rule>
+
+    <dxi-item dataField="Contact Number">
+        <dxi-validation-rule type="numeric">
+        </dxi-validation-rule>
+    </dxi-item>
+
+    <!-- <dxi-item dataField="Email id">
+        <dxi-validation-rule type="required" message="Email is required"></dxi-validation-rule>
+        <dxi-validation-rule type="email" message="Email is Invalid">
+        </dxi-validation-rule>
+    </dxi-item>
+
+    <dxi-item dataField="BirthDate">
+        <dx-date-box
+        invalidDateMessage="The date must have the following format: MM/dd/yyyy">
+        </dx-date-box>
+    </dxi-item> -->
+
+    <dxi-item dataField="Gender">
+        <dx-radio-group
+                    name="Gender"
+                    [items]="priorities"
+                    [value]="priorities[0]"
+                    layout="horizontal">
+                </dx-radio-group>
+    </dxi-item>
+    
+    <dxi-item dataField="Catagory">
+        <dx-check-box
+        name="Catagory"
+        [width]="80"
+        text="SC"
+    ></dx-check-box>
+    <dx-check-box
+    name="Catagory"
+    [width]="80"
+    text="ST"
+    ></dx-check-box> 
+     <dx-check-box
+     name="Catagory"
+    [width]="80"
+    text="OBC"
+    ></dx-check-box>
+    <dx-check-box
+    name="Catagory"
+    [width]="80"
+    text="General"
+    ></dx-check-box>
+    </dxi-item>
+
+    <dxi-item dataField="upload your picture">
+        <dx-file-uploader
+        selectButtonText="Select photo"
+        labelText=""
+        accept="image/*"
+        uploadMode="useForm">
+        </dx-file-uploader>
+    </dxi-item>
+    
+    <dxi-item 
+    itemType="button" id="register"
+    horizontalAlignment="left"
+    [buttonOptions]="submitButtonOptions">
+    
+    </dxi-item>
+</dx-form>
+</form>
