@@ -55,11 +55,11 @@ export class RegistrationFormComponent implements OnInit {
     setTimeout(() => { 
         alert("Submitted");          
     }, 1000);
-  console.dir(e.srcElement);
+    
+  console.dir(e.srcElement);   //form element
     for(let element of e.srcElement){
-      console.log(element.value);
+      console.log(element.value); //value from inside form
       if(element.name=="Catagory"){
-        //console.log("Inside Catagory");
         if(element.value=="true")
         localStorage.setItem(element.name ,element.parentNode.outerText);  
       }
@@ -67,8 +67,8 @@ export class RegistrationFormComponent implements OnInit {
       localStorage.setItem(element.name ,element.value);
     }
     e.preventDefault();
+
 }
-  
   
 }
 
